@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import NextAuth from "next-auth";
+import { authConfig } from "@/lib/auth.config";
+
+// Pakai instance NextAuth terpisah yang cuma berisi config edge-safe
+// (tanpa bcrypt/Prisma) — supaya middleware bisa jalan di Edge Runtime.
+const { auth } = NextAuth(authConfig);
 
 export default auth((req) => {
   const isLoggedIn = !!req.auth;
