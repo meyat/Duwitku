@@ -41,7 +41,7 @@ export function PwaManager() {
 
   return (
     <div className="fixed bottom-20 md:bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-80 z-40 bg-card border border-border rounded-xl shadow-lg p-4 flex items-center gap-3">
-      <div className="h-10 w-10 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+      <div className="h-10 w-10 rounded-lg bg-primary-soft flex items-center justify-center shrink-0">
         <Download className="h-5 w-5 text-primary" />
       </div>
       <div className="flex-1 min-w-0">

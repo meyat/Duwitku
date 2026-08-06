@@ -128,7 +128,7 @@ export function PaymentModal({
           </div>
 
           {isOverpay && (
-            <div className="rounded-lg bg-warning/10 p-3 flex flex-col gap-2">
+            <div className="rounded-lg bg-warning-soft p-3 flex flex-col gap-2">
               <p className="text-xs text-warning font-medium">
                 Nominal melebihi cicilan bulan ini sebesar {formatCurrency(paidNum - billedAmount)}. Pilih perlakuan:
               </p>

@@ -187,7 +187,7 @@ export default function CategoriesPage() {
                   </button>
                   <button
                     onClick={() => handleDelete(cat)}
-                    className="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-danger/10 transition-colors"
+                    className="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-danger-soft transition-colors"
                   >
                     <Trash2 className="h-3.5 w-3.5 text-danger" />
                   </button>

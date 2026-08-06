@@ -77,9 +77,9 @@ export default function NotificationsPage() {
             notifications.map((n) => (
               <div
                 key={n.id}
-                className={`flex items-start gap-3 py-3 border-b border-border last:border-0 ${!n.isRead ? "bg-accent/40 -mx-2 px-2 rounded-lg" : ""}`}
+                className={`flex items-start gap-3 py-3 border-b border-border last:border-0 ${!n.isRead ? "bg-accent -mx-2 px-2 rounded-lg" : ""}`}
               >
-                <div className={`h-8 w-8 rounded-lg flex items-center justify-center shrink-0 ${!n.isRead ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground"}`}>
+                <div className={`h-8 w-8 rounded-lg flex items-center justify-center shrink-0 ${!n.isRead ? "bg-primary-soft text-primary" : "bg-secondary text-muted-foreground"}`}>
                   <Bell className="h-4 w-4" />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -108,7 +108,7 @@ export default function NotificationsPage() {
                   )}
                   <button
                     onClick={() => handleDelete(n.id)}
-                    className="h-7 w-7 rounded-lg flex items-center justify-center hover:bg-danger/10 transition-colors"
+                    className="h-7 w-7 rounded-lg flex items-center justify-center hover:bg-danger-soft transition-colors"
                     title="Hapus"
                   >
                     <Trash2 className="h-3.5 w-3.5 text-danger" />

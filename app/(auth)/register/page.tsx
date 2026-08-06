@@ -15,6 +15,7 @@ export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [inviteCode, setInviteCode] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +29,7 @@ export default function RegisterPage() {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, inviteCode }),
       });
 
       const data = await res.json();
@@ -74,6 +75,10 @@ export default function RegisterPage() {
           <div className="flex flex-col gap-1.5">
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" placeholder="Minimal 8 karakter" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <Label htmlFor="inviteCode">Kode Undangan</Label>
+            <Input id="inviteCode" placeholder="Masukkan kode undangan" value={inviteCode} onChange={(e) => setInviteCode(e.target.value)} required />
           </div>
 
           {error && <p className="text-sm text-danger">{error}</p>}

@@ -210,15 +210,15 @@ export function ImportCsvSection() {
         {preview && (
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-3 gap-3">
-              <div className="rounded-lg bg-success/10 p-3 text-center">
+              <div className="rounded-lg bg-success-soft p-3 text-center">
                 <p className="text-lg font-semibold text-success">{preview.summary.valid}</p>
                 <p className="text-xs text-muted-foreground">Valid</p>
               </div>
-              <div className="rounded-lg bg-warning/10 p-3 text-center">
+              <div className="rounded-lg bg-warning-soft p-3 text-center">
                 <p className="text-lg font-semibold text-warning">{preview.summary.duplicate}</p>
                 <p className="text-xs text-muted-foreground">Duplikat</p>
               </div>
-              <div className="rounded-lg bg-danger/10 p-3 text-center">
+              <div className="rounded-lg bg-danger-soft p-3 text-center">
                 <p className="text-lg font-semibold text-danger">{preview.summary.invalid}</p>
                 <p className="text-xs text-muted-foreground">Tidak Valid</p>
               </div>

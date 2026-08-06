@@ -30,7 +30,7 @@ export function DeleteTransactionButton({ id }: { id: string }) {
       <button
         onClick={handleDelete}
         disabled={loading}
-        className="flex flex-col items-center gap-1.5 rounded-lg border border-danger bg-danger/10 py-3 text-xs font-medium text-danger"
+        className="flex flex-col items-center gap-1.5 rounded-lg border border-danger bg-danger-soft py-3 text-xs font-medium text-danger"
       >
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
         Yakin?
@@ -42,7 +42,7 @@ export function DeleteTransactionButton({ id }: { id: string }) {
     <button
       onClick={() => setConfirming(true)}
       onBlur={() => setConfirming(false)}
-      className="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-card py-3 text-xs font-medium text-danger hover:bg-danger/10 transition-colors"
+      className="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-card py-3 text-xs font-medium text-danger hover:bg-danger-soft transition-colors"
     >
       <Trash2 className="h-4 w-4" />
       Hapus

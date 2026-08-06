@@ -19,6 +19,21 @@ Dokumen ini untuk developer yang ingin menjalankan atau mengembangkan project in
 
 Autentikasi lengkap · Dashboard ringkasan · CRUD transaksi + kategori + tag · Riwayat dengan filter/search/sort/pagination · Global Search (Cmd/Ctrl+K) · Statistik & grafik (pie/bar chart) · Target Tabungan · Tagihan + reminder · Transaksi Berulang (auto-generate) · Utang/Piutang dengan cicilan otomatis & manual · Investasi sederhana · Import CSV (preview + validasi + deteksi duplikat) · Export CSV/Excel · Notification Center · PWA (installable, offline page, service worker) · Dark theme default.
 
+## Sistem Tema (Light/Dark Mode)
+
+Tema dikelola oleh `components/theme-provider.tsx` (React context) + `components/theme-init-script.tsx`
+(inline script anti-flicker yang jalan sebelum hydration). Preferensi disimpan di `localStorage`
+(sumber utama, langsung diterapkan) dan juga di-sync ke database lewat `/api/settings/preferences`
+(untuk referensi lintas device). Class `dark`/`light` diterapkan ke elemen `<html>`, bukan lagi
+di-hardcode di `app/layout.tsx`.
+
+Semua warna "tint"/transparan (background badge, status card, dll) memakai token eksplisit
+(`--danger-soft`, `--success-soft`, `--warning-soft`, `--primary-soft`) di `globals.css`, BUKAN
+utility Tailwind `bg-warna/NN`. Ini disengaja — Tailwind v4 tidak konsisten menerapkan opacity
+modifier pada custom property yang di-define lewat `@theme inline`, sehingga class seperti
+`bg-danger/10` bisa render sebagai warna solid 100% alih-alih transparan 10%. Kalau menambah
+warna tint baru, tambahkan token `-soft` baru di `globals.css`, jangan pakai `/NN`.
+
 ## Instalasi Lokal
 
 ```bash
@@ -47,6 +62,7 @@ Buka http://localhost:3000
 | `NEXTAUTH_URL` | URL aplikasi (untuk NextAuth callback) |
 | `NEXTAUTH_SECRET` | Secret untuk enkripsi session/JWT — generate dengan `openssl rand -base64 32` |
 | `SEED_SECRET` | (Opsional) Proteksi endpoint `/api/dev-seed` untuk seeding tanpa CLI |
+| `INVITE_CODE` | (Opsional, tapi disarankan untuk pemakaian pribadi) Kode yang wajib dimasukkan orang lain sebelum bisa daftar akun baru. Kosongkan kalau ingin pendaftaran terbuka untuk siapa saja |
 
 ## Script Tersedia
 

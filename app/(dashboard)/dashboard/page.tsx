@@ -30,7 +30,7 @@ export default function DashboardPage() {
       </div>
 
       {error && (
-        <Card className="border-danger/30 bg-danger/5">
+        <Card className="border-danger/30 bg-danger-soft">
           <CardContent className="py-4 text-sm text-danger">{error}</CardContent>
         </Card>
       )}
@@ -59,7 +59,7 @@ export default function DashboardPage() {
       </div>
 
       {!loading && data && data.dueSoonBillsCount > 0 && (
-        <Card className="border-warning/30 bg-warning/10">
+        <Card className="border-warning/30 bg-warning-soft">
           <CardContent className="py-3 flex items-center gap-3">
             <Receipt className="h-5 w-5 text-warning shrink-0" />
             <p className="text-sm text-foreground">
@@ -190,13 +190,13 @@ export default function DashboardPage() {
             <CardTitle className="text-foreground text-base font-semibold">Ringkasan Utang & Piutang</CardTitle>
           </CardHeader>
           <CardContent className="pt-0 grid grid-cols-2 gap-3">
-            <div className="rounded-lg bg-danger/10 p-3">
+            <div className="rounded-lg bg-danger-soft p-3">
               <p className="text-xs text-muted-foreground mb-1">Utang Aktif</p>
               <p className="text-base font-semibold text-danger">
                 {loading || !data ? "..." : data.debtSummary.activeDebtCount}
               </p>
             </div>
-            <div className="rounded-lg bg-success/10 p-3">
+            <div className="rounded-lg bg-success-soft p-3">
               <p className="text-xs text-muted-foreground mb-1">Piutang Aktif</p>
               <p className="text-base font-semibold text-success">
                 {loading || !data ? "..." : data.debtSummary.activeReceivableCount}

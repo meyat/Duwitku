@@ -127,7 +127,7 @@ export default function SavingGoalDetailPage() {
       <Card>
         <CardContent className="pt-5 flex flex-col gap-4">
           {goal.status === "ACHIEVED" && (
-            <div className="flex items-center gap-2 rounded-lg bg-success/10 text-success px-3 py-2 text-sm font-medium">
+            <div className="flex items-center gap-2 rounded-lg bg-success-soft text-success px-3 py-2 text-sm font-medium">
               <CheckCircle2 className="h-4 w-4" /> Target tercapai! 🎉
             </div>
           )}

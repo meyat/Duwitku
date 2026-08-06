@@ -345,7 +345,7 @@ export default function InvestmentsPage() {
                     <button onClick={() => openEdit(inv)} className="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
                       <Pencil className="h-3.5 w-3.5 text-muted-foreground" />
                     </button>
-                    <button onClick={() => handleDelete(inv)} className="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-danger/10 transition-colors">
+                    <button onClick={() => handleDelete(inv)} className="h-8 w-8 rounded-lg flex items-center justify-center hover:bg-danger-soft transition-colors">
                       <Trash2 className="h-3.5 w-3.5 text-danger" />
                     </button>
                   </div>

@@ -16,7 +16,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { name, email, password } = parsed.data;
+    const { name, email, password, inviteCode } = parsed.data;
+
+    const expectedInviteCode = process.env.INVITE_CODE;
+    if (expectedInviteCode && inviteCode !== expectedInviteCode) {
+      return NextResponse.json(
+        { error: "Kode undangan tidak valid" },
+        { status: 403 }
+      );
+    }
+
     const normalizedEmail = email.toLowerCase();
 
     const existing = await prisma.user.findUnique({

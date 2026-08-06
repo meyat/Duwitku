@@ -183,9 +183,9 @@ function StatCard({
   loading: boolean;
 }) {
   const toneClasses = {
-    success: "bg-success/15 text-success",
-    danger: "bg-danger/15 text-danger",
-    warning: "bg-warning/15 text-warning",
+    success: "bg-success-soft text-success",
+    danger: "bg-danger-soft text-danger",
+    warning: "bg-warning-soft text-warning",
   };
 
   return (

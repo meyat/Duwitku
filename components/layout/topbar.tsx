@@ -45,7 +45,7 @@ export function Topbar({ userName }: { userName: string }) {
           )}
         </Link>
         <div className="hidden sm:flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-primary/15 text-primary flex items-center justify-center text-xs font-semibold">
+          <div className="h-8 w-8 rounded-full bg-primary-soft text-primary flex items-center justify-center text-xs font-semibold">
             {userName.charAt(0).toUpperCase()}
           </div>
           <span className="text-sm font-medium text-foreground">{userName}</span>

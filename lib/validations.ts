@@ -4,6 +4,7 @@ export const registerSchema = z.object({
   name: z.string().min(2, "Nama minimal 2 karakter").max(100),
   email: z.string().email("Email tidak valid"),
   password: z.string().min(8, "Password minimal 8 karakter"),
+  inviteCode: z.string().min(1, "Kode undangan wajib diisi"),
 });
 
 export const loginSchema = z.object({

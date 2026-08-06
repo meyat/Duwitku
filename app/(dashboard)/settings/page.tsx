@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { useTheme, type ThemeMode } from "@/components/theme-provider";
 
 interface Profile {
   name: string;
@@ -42,6 +43,7 @@ export default function SettingsPage() {
   const [savingPrefs, setSavingPrefs] = useState(false);
   const [confirmDeleteData, setConfirmDeleteData] = useState(false);
   const [confirmDeleteAccount, setConfirmDeleteAccount] = useState(false);
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     fetch("/api/settings/profile")
@@ -95,6 +97,11 @@ export default function SettingsPage() {
   async function updatePreference(key: keyof Profile, value: string | number) {
     if (!profile) return;
     setProfile({ ...profile, [key]: value });
+
+    if (key === "theme") {
+      setTheme(value as ThemeMode);
+    }
+
     setSavingPrefs(true);
     await fetch("/api/settings/preferences", {
       method: "PUT",

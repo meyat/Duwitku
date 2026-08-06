@@ -16,10 +16,10 @@ export function SummaryCard({
 }) {
   const toneClasses: Record<string, string> = {
     default: "bg-secondary text-foreground",
-    success: "bg-success/15 text-success",
-    danger: "bg-danger/15 text-danger",
-    warning: "bg-warning/15 text-warning",
-    primary: "bg-primary/15 text-primary",
+    success: "bg-success-soft text-success",
+    danger: "bg-danger-soft text-danger",
+    warning: "bg-warning-soft text-warning",
+    primary: "bg-primary-soft text-primary",
   };
 
   return (

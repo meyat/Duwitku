@@ -312,10 +312,10 @@ export default function NewDebtPage() {
                 <div
                   className={`rounded-lg p-3 text-xs ${
                     manualDiff === 0
-                      ? "bg-success/10 text-success"
+                      ? "bg-success-soft text-success"
                       : manualDiff > 0
-                        ? "bg-warning/10 text-warning"
-                        : "bg-danger/10 text-danger"
+                        ? "bg-warning-soft text-warning"
+                        : "bg-danger-soft text-danger"
                   }`}
                 >
                   Total jadwal: {formatCurrency(manualTotal)} dari {formatCurrency(remainingAfterDp)} (sisa
